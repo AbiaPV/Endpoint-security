@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Endpoint Security Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <!-- HEADER -->
+
+        <header>
+
+            <h1>🛡️ Endpoint Security Dashboard</h1>
+
+            <p>
+                Monitor endpoint threats and network security
+            </p>
+
+        </header>
+
+
+        <!-- RISK SECTION -->
+
+        <section class="risk-section">
+
+            <h2>Overall Security Risk</h2>
+
+            <div class="risk-score">
+
+                {{ data.risk_score }}
+
+            </div>
+
+            <div class="risk-level">
+
+                {{ data.risk_level }}
+
+            </div>
+
+        </section>
+
+
+        <!-- SUMMARY CARDS -->
+
+        <section class="cards">
+
+
+            <div class="card">
+
+                <h3>Total Threats</h3>
+
+                <div class="number">
+
+                    {{ data.total_threats }}
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Network Alerts</h3>
+
+                <div class="number">
+
+                    {{ data.network_alerts }}
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Suspicious Processes</h3>
+
+                <div class="number">
+
+                    {{ data.suspicious_processes }}
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Risk Score</h3>
+
+                <div class="number">
+
+                    {{ data.risk_score }}
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- ALERTS -->
+
+        <section class="alerts">
+
+            <h2>🚨 Security Alerts</h2>
+
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Type</th>
+
+                        <th>Description</th>
+
+                        <th>Name</th>
+
+                        <th>Risk</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    {% for alert in data.alerts %}
+
+                    <tr>
+
+                        <td>
+                            {{ alert.type }}
+                        </td>
+
+                        <td>
+                            {{ alert.description }}
+                        </td>
+
+                        <td>
+                            {{ alert.name }}
+                        </td>
+
+                        <td>
+                            <strong>
+                                {{ alert.risk }}
+                            </strong>
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+
+        <!-- PDF BUTTON -->
+
+        <section class="report-section">
+
+            <a href="{{ url_for('download_report') }}"
+               class="download-button">
+
+                📄 Download Security Report
+
+            </a>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            <p>
+                Endpoint Security System
+            </p>
+
+            <p>
+                Dashboard & Report Module
+            </p>
+
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
