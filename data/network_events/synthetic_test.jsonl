@@ -1,0 +1,1 @@
+{"event_id":"TEST-001","timestamp":"2026-10-10T10:00:00Z","host":"TEST-PC","data":{"source_ip":"192.0.2.10","destination_ip":"198.51.100.20","destination_port":4444,"protocols":"TCP","packet_length":60}}

@@ -1,0 +1,136 @@
+{
+  "generated_at": "2026-10-10T08:46:01.183032+00:00",
+  "input_file": "data\\network_events\\tshark_events.jsonl",
+  "packet_event_count": 50,
+  "watch_ports": [
+    1337,
+    4444,
+    5555,
+    12345,
+    31337
+  ],
+  "alert_count": 0,
+  "alerts": [],
+  "risk": {
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "alert_count": 0,
+    "risk_details": {
+      "total_points": 0,
+      "score_capped": false,
+      "alerts_received": 0,
+      "points_by_severity": {},
+      "scored_alerts": [],
+      "ignored_alerts": [],
+      "duplicate_alerts": [],
+      "warnings": [],
+      "policy": {
+        "severity_weights": {
+          "LOW": 5,
+          "MEDIUM": 15,
+          "HIGH": 25,
+          "CRITICAL": 40
+        },
+        "level_thresholds": [
+          [
+            75,
+            "CRITICAL"
+          ],
+          [
+            50,
+            "HIGH"
+          ],
+          [
+            25,
+            "MEDIUM"
+          ],
+          [
+            0,
+            "LOW"
+          ]
+        ],
+        "max_score": 100
+      }
+    }
+  },
+  "process_event_correlation": {
+    "incident_count": 0,
+    "incidents": [],
+    "correlated_event_ids": [],
+    "standalone_event_ids": [
+      "4b6cb899-bc8e-472f-95a3-c462323d3f14",
+      "ff30a0f5-e5cc-49be-8820-088d81f30f36",
+      "01ac567b-b7a4-45e6-81d7-d27171c0eb45",
+      "10cb7e0e-21e2-4f7a-bd36-94449c471295",
+      "164cc1b6-a4eb-4d97-8b85-df171c2af174",
+      "c378c9cb-1308-483b-b54c-a8df3bc40128",
+      "a7f53443-e14a-460b-b017-d04cf221458f",
+      "2e473c9a-cbe9-4a7c-a25f-37edc229a70c",
+      "81b94b48-e51e-415e-a5ff-5782e7ec9730",
+      "fe6cda24-d001-4043-a181-040b905763df",
+      "b09a516b-2cff-4f17-b7a7-2312dcba1ea4",
+      "236877bf-01d4-4016-876a-d729f5deb371",
+      "6452d1d8-9499-487c-b884-b065fc83e467",
+      "4cf18b18-646b-4a9f-9fc2-c21ab0554dec",
+      "41af2cc5-e860-47e4-9bc8-efc0a3fe44e4",
+      "f6a43f28-7e0b-4b41-9108-b09099aaa990",
+      "d0efd723-930e-4b88-9059-2761f9e8861e",
+      "68eb79e4-1465-484c-9857-a67fbc190408",
+      "d02d4a33-5a22-447d-9640-b9b5b09dac3c",
+      "2dba29cf-8f49-4fd2-b38b-868545a6fc72",
+      "692fec18-19a3-4e3b-9c81-d1bb1d27aa6d",
+      "6f1196d3-1ebb-4179-af18-8666e7ce02be",
+      "7b5d9300-04bd-4606-a596-98f9269a1807",
+      "e18a8ef8-19e1-4a00-b52d-6512c73181b6",
+      "889e0b67-b35b-4f54-97cc-36d31a9338d7",
+      "dbf742d4-e1a3-4a4a-81dd-93afaf372770",
+      "82401e77-d93e-4d6f-844e-bfd51ce6d375",
+      "81a58e95-f49a-4ef2-a733-e67bd71f35a3",
+      "67a45195-4ae4-43e0-bbd5-8468b00b2f84",
+      "143ac861-7d59-4340-800a-e9dd3fc83337",
+      "08eb1da0-815b-4459-b969-90e0e6120f0f",
+      "8c3b5c31-becc-4531-b60c-59f833cc20a7",
+      "55081321-b4e9-46d5-8286-f9be0e46fcd7",
+      "9dfc133d-ffde-4e71-8dd6-974e8fcc4ef6",
+      "21d10ce7-f7b0-47c9-85d3-6c8931f7fe0c",
+      "c5436634-1e28-4cf0-ac69-b96e76d32d64",
+      "eb663fc5-32f3-4d49-ae8c-744adb2d7beb",
+      "99ca2373-8fc2-4af7-9c79-41a67c88c240",
+      "0a61dd66-01c7-4450-95f1-5cf65ff70aab",
+      "7aa099e1-bbf0-472c-ac2b-0b4ce776a29f",
+      "91ba8855-1858-46f4-895a-1b3e6e09ba29",
+      "e39abebe-feba-4d4b-8da2-f0b288122f22",
+      "b2fde823-831f-4525-b2b5-2d4df8e37d52",
+      "5a7ce42b-d5a9-4970-bf66-c113ce6dd808",
+      "4407367d-054a-4a3c-81ff-2e696f116971",
+      "7be6dae6-7340-4c93-8c10-f1b57986d4c0",
+      "72ca0ed1-55b0-4200-89bc-5c9b6a0abd1c",
+      "625dbf59-a29e-4006-a442-80880efc1dbc",
+      "786991a0-b6b3-4ed9-8297-d9e0caa4f85b",
+      "24360803-1559-4d4f-981e-df8ce171d43c"
+    ],
+    "duplicate_count": 0,
+    "duplicate_events": [],
+    "invalid_event_count": 0,
+    "event_count": 50,
+    "warnings": [],
+    "parameters": {
+      "time_window_seconds": 300,
+      "allow_untimed_links": false
+    }
+  },
+  "network_indicator_correlation": {
+    "incident_count": 0,
+    "incidents": [],
+    "standalone_alert_event_ids": [],
+    "time_window_seconds": 300,
+    "method": "same source IP + destination IP + destination port within time window"
+  },
+  "warnings": [],
+  "limitations": [
+    "A watched port is a heuristic indicator, not proof of malicious activity.",
+    "This analyzes captured packet metadata only; it does not inspect payloads.",
+    "The process correlator needs PID/PPID fields to link process-related events.",
+    "A clean result means no configured indicator matched in this capture, not that the host is guaranteed safe."
+  ]
+}

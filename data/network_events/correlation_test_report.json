@@ -1,0 +1,149 @@
+{
+  "generated_at": "2026-10-10T09:25:30.447259+00:00",
+  "input_file": "data\\network_events\\correlation_test.jsonl",
+  "packet_event_count": 2,
+  "watch_ports": [
+    1337,
+    4444,
+    5555,
+    12345,
+    31337
+  ],
+  "alert_count": 2,
+  "alerts": [
+    {
+      "event_id": "NET-001",
+      "rule": "NETWORK_WATCHLIST_DESTINATION_PORT",
+      "severity": "MEDIUM",
+      "message": "Observed packet to watchlisted destination port 4444 (192.0.2.10 -> 198.51.100.20; protocols=TCP). This is a heuristic indicator, not proof of compromise.",
+      "timestamp": "2026-10-10T10:00:00Z",
+      "host": "TEST-PC",
+      "source_ip": "192.0.2.10",
+      "destination_ip": "198.51.100.20",
+      "destination_port": 4444,
+      "protocols": "TCP"
+    },
+    {
+      "event_id": "NET-002",
+      "rule": "NETWORK_WATCHLIST_DESTINATION_PORT",
+      "severity": "MEDIUM",
+      "message": "Observed packet to watchlisted destination port 4444 (192.0.2.10 -> 198.51.100.20; protocols=TCP). This is a heuristic indicator, not proof of compromise.",
+      "timestamp": "2026-10-10T10:02:00Z",
+      "host": "TEST-PC",
+      "source_ip": "192.0.2.10",
+      "destination_ip": "198.51.100.20",
+      "destination_port": 4444,
+      "protocols": "TCP"
+    }
+  ],
+  "risk": {
+    "risk_score": 30,
+    "risk_level": "MEDIUM",
+    "alert_count": 2,
+    "risk_details": {
+      "total_points": 30,
+      "score_capped": false,
+      "alerts_received": 2,
+      "points_by_severity": {
+        "MEDIUM": {
+          "count": 2,
+          "points": 30
+        }
+      },
+      "scored_alerts": [
+        {
+          "index": 0,
+          "rule": "NETWORK_WATCHLIST_DESTINATION_PORT",
+          "severity": "MEDIUM",
+          "points": 15,
+          "event_id": "NET-001"
+        },
+        {
+          "index": 1,
+          "rule": "NETWORK_WATCHLIST_DESTINATION_PORT",
+          "severity": "MEDIUM",
+          "points": 15,
+          "event_id": "NET-002"
+        }
+      ],
+      "ignored_alerts": [],
+      "duplicate_alerts": [],
+      "warnings": [],
+      "policy": {
+        "severity_weights": {
+          "LOW": 5,
+          "MEDIUM": 15,
+          "HIGH": 25,
+          "CRITICAL": 40
+        },
+        "level_thresholds": [
+          [
+            75,
+            "CRITICAL"
+          ],
+          [
+            50,
+            "HIGH"
+          ],
+          [
+            25,
+            "MEDIUM"
+          ],
+          [
+            0,
+            "LOW"
+          ]
+        ],
+        "max_score": 100
+      }
+    }
+  },
+  "process_event_correlation": {
+    "incident_count": 0,
+    "incidents": [],
+    "correlated_event_ids": [],
+    "standalone_event_ids": [
+      "NET-001",
+      "NET-002"
+    ],
+    "duplicate_count": 0,
+    "duplicate_events": [],
+    "invalid_event_count": 0,
+    "event_count": 2,
+    "warnings": [],
+    "parameters": {
+      "time_window_seconds": 300,
+      "allow_untimed_links": false
+    }
+  },
+  "network_indicator_correlation": {
+    "incident_count": 1,
+    "incidents": [
+      {
+        "incident_id": "NET-0001",
+        "status": "possible_network_indicator",
+        "event_ids": [
+          "NET-001",
+          "NET-002"
+        ],
+        "event_count": 2,
+        "source_ip": "192.0.2.10",
+        "destination_ip": "198.51.100.20",
+        "destination_port": 4444,
+        "first_seen": "2026-10-10T10:00:00+00:00",
+        "last_seen": "2026-10-10T10:02:00+00:00",
+        "note": "Multiple watchlist-port observations shared the same endpoint tuple within 300s. Investigate; this does not confirm an attack."
+      }
+    ],
+    "standalone_alert_event_ids": [],
+    "time_window_seconds": 300,
+    "method": "same source IP + destination IP + destination port within time window"
+  },
+  "warnings": [],
+  "limitations": [
+    "A watched port is a heuristic indicator, not proof of malicious activity.",
+    "This analyzes captured packet metadata only; it does not inspect payloads.",
+    "The process correlator needs PID/PPID fields to link process-related events.",
+    "A clean result means no configured indicator matched in this capture, not that the host is guaranteed safe."
+  ]
+}

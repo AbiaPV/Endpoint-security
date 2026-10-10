@@ -1,0 +1,21 @@
+{
+  "_comment": "Sample data only. Field names are ASSUMED until Member 1/2 confirm their schemas.",
+  "detection_result": {
+    "threat_detected": true,
+    "alert_count": 4,
+    "alerts": [
+      {"rule": "suspicious_powershell", "severity": "HIGH", "message": "Encoded PowerShell launched", "event_id": "evt-1002"},
+      {"rule": "credential_dump", "severity": "CRITICAL", "message": "Credential dumping tool executed", "event_id": "evt-1003"},
+      {"rule": "credential_dump", "severity": "CRITICAL", "message": "Credential dumping tool executed", "event_id": "evt-1003"},
+      {"rule": "suspicious_powershell", "severity": "HIGH", "message": "Encoded PowerShell launched", "event_id": "evt-2001"}
+    ]
+  },
+  "events": [
+    {"event_id": "evt-1001", "timestamp": "2026-10-10T10:00:00Z", "host": "WS-01", "pid": 4100, "ppid": 2000, "process_name": "winword.exe"},
+    {"event_id": "evt-1002", "timestamp": "2026-10-10T10:00:20Z", "host": "WS-01", "pid": 4200, "ppid": 4100, "process_name": "powershell.exe", "rule": "suspicious_powershell"},
+    {"event_id": "evt-1003", "timestamp": "2026-10-10T10:01:00Z", "host": "WS-01", "pid": 4300, "ppid": 4200, "process_name": "procdump.exe", "rule": "credential_dump"},
+    {"event_id": "evt-1003", "timestamp": "2026-10-10T10:01:00Z", "host": "WS-01", "pid": 4300, "ppid": 4200, "process_name": "procdump.exe", "rule": "credential_dump"},
+    {"event_id": "evt-2001", "timestamp": "2026-10-10T10:00:30Z", "host": "WS-02", "pid": 7000, "ppid": 6000, "process_name": "powershell.exe", "rule": "suspicious_powershell"},
+    {"event_id": "evt-3001", "timestamp": "2026-10-10T14:00:00Z", "host": "WS-01", "pid": 4100, "ppid": 2000, "process_name": "winword.exe"}
+  ]
+}
