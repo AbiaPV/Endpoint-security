@@ -40,38 +40,6 @@ def dashboard():
     )
 
 
-# ============================================================
-# PDF REPORT
-# ============================================================
-
-@app.route("/download_report")
-def download_report():
-
-    # Get security information
-    data = get_security_data()
-
-    # Create reports folder
-    os.makedirs("reports", exist_ok=True)
-
-    # PDF location
-    pdf_path = os.path.join(
-        "reports",
-        "endpoint_security_report.pdf"
-    )
-
-    # Create PDF document
-    document = SimpleDocTemplate(
-        pdf_path,
-        pagesize=A4
-    )
-
-    # Get default styles
-    styles = getSampleStyleSheet()
-
-    # Store PDF elements
-    elements = []
-
-
     # --------------------------------------------------------
     # TITLE
     # --------------------------------------------------------
