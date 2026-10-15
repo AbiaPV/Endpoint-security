@@ -161,16 +161,25 @@ def download_report():
 
 
     # Add alerts
+       # Add alerts with text wrapping enabled
     for alert in data["alerts"]:
-
         table_data.append(
             [
-                alert["type"],
-                alert["description"],
-                alert["name"],
-                alert["risk"]
+                Paragraph(alert["type"], styles["Normal"]),
+                Paragraph(alert["description"], styles["Normal"]),
+                Paragraph(alert["name"], styles["Normal"]),
+                Paragraph(alert["risk"], styles["Normal"])
             ]
         )
+
+    # Set exact explicit column widths so text wraps neatly to the next line
+    # A4 printable area width is roughly 6.5 to 7 inches
+    table = Table(
+        table_data, 
+        colWidths=[1.0 * inch, 3.2 * inch, 1.3 * inch, 1.0 * inch], 
+        repeatRows=1
+    )
+
 
 
     # Create table
